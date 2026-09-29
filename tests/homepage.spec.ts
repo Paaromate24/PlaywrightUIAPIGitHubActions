@@ -13,7 +13,7 @@ test.beforeEach(async ({ page }) => {
     homePage = new HomePage(page);
 });
 
-
+//Checking Commits
 test.skip('home page title test', async () => {
     let pageTitle = await homePage.getHomePageTitle();
     console.log('home page title: ', pageTitle);
