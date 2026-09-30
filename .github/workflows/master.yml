@@ -22,10 +22,10 @@ on:
         default: 'QA'
         type: choice
         options:
-          - dev
+          - DEV
           - QA
-          - stage
-          - Prod
+          - STAGE
+          - PROD
 
 jobs:
 
@@ -172,7 +172,7 @@ jobs:
   deploy-qa:
     name: Deploy to QA
     needs: sanity-dev
-    if: contains(fromJSON('["QA","stage","Prod"]'), github.event.inputs.environment)
+    if: contains(fromJSON('["QA","STAGE","PROD"]'), github.event.inputs.environment)
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to QA
@@ -181,7 +181,7 @@ jobs:
   regression-qa:
     name: QA - Regression Tests
     needs: deploy-qa
-    if: contains(fromJSON('["QA","stage","Prod"]'), github.event.inputs.environment)
+    if: contains(fromJSON('["QA","STAGE","PROD"]'), github.event.inputs.environment)
     runs-on: ubuntu-latest
     environment: QA
     steps:
@@ -275,7 +275,7 @@ jobs:
   deploy-stage:
     name: Deploy to STAGE
     needs: regression-qa
-    if: contains(fromJSON('["stage","Prod"]'), github.event.inputs.environment)
+    if: contains(fromJSON('["STAGE","PROD"]'), github.event.inputs.environment)
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to STAGE
@@ -284,7 +284,7 @@ jobs:
   sanity-stage:
     name: STAGE - Sanity Tests
     needs: deploy-stage
-    if: contains(fromJSON('["stage","Prod"]'), github.event.inputs.environment)
+    if: contains(fromJSON('["STAGE","PROD"]'), github.event.inputs.environment)
     runs-on: ubuntu-latest
     environment: stage
     steps:
@@ -378,7 +378,7 @@ jobs:
   deploy-prod:
     name: Deploy to PROD
     needs: sanity-stage
-    if: github.event.inputs.environment == 'Prod'
+    if: github.event.inputs.environment == 'PROD'
     runs-on: ubuntu-latest
     environment: Prod
     steps:
@@ -388,7 +388,7 @@ jobs:
   smoke-prod:
     name: PROD - Smoke Tests
     needs: deploy-prod
-    if: github.event.inputs.environment == 'Prod'
+    if: github.event.inputs.environment == 'PROD'
     runs-on: ubuntu-latest
     environment: Prod
     steps:
