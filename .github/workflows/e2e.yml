@@ -1,6 +1,6 @@
 # ═══════════════════════════════════════════════════════════════
 # FILE: .github/workflows/master-pipeline.yml
-# REPO: naveenanimation20/OpenCartWebAPIAutomationFramework
+# REPO: arunautomate24/OpenCartWebAPIAutomationFramework
 # DEV REPO: jglick/simple-maven-project-with-tests
 # ═══════════════════════════════════════════════════════════════
 # "Run up to environment" — the dropdown controls how far the
@@ -85,7 +85,7 @@ jobs:
       - name: Checkout QA repo
         uses: actions/checkout@v4
         with:
-          repository: naveenanimation20/OpenCartWebAPIAutomationFramework
+          repository: arunautomate24/OpenCartWebAPIAutomationFramework
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -188,7 +188,7 @@ jobs:
       - name: Checkout QA repo
         uses: actions/checkout@v4
         with:
-          repository: naveenanimation20/OpenCartWebAPIAutomationFramework
+          repository: arunautomate24/OpenCartWebAPIAutomationFramework
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -291,7 +291,7 @@ jobs:
       - name: Checkout QA repo
         uses: actions/checkout@v4
         with:
-          repository: naveenanimation20/OpenCartWebAPIAutomationFramework
+          repository: arunautomate24/OpenCartWebAPIAutomationFramework
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -395,7 +395,7 @@ jobs:
       - name: Checkout QA repo
         uses: actions/checkout@v4
         with:
-          repository: naveenanimation20/OpenCartWebAPIAutomationFramework
+          repository: arunautomate24/OpenCartWebAPIAutomationFramework
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -520,7 +520,7 @@ jobs:
             echo "overall=✅ ALL PASSED" >> $GITHUB_OUTPUT
           fi
 
-          REPORT_BASE="https://naveenanimation20.github.io/OpenCartWebAPIAutomationFramework/runs/${{ github.run_id }}"
+          REPORT_BASE="https://arunautomate24.github.io/OpenCartWebAPIAutomationFramework/runs/${{ github.run_id }}"
           echo "report_url=${REPORT_BASE}" >> $GITHUB_OUTPUT
 
       - name: Download All Reports
@@ -690,7 +690,7 @@ jobs:
                 <a class="report-link green" href="${REPORT_URL}/qa-allure/index.html">📈 QA Allure Report</a>
               </div>
               <div class="footer">
-                Naveen Automation Labs | Playwright Framework | $(date +'%d %b %Y, %I:%M %p UTC')
+                Arunkumar Automation Labs | Playwright Framework | $(date +'%d %b %Y, %I:%M %p UTC')
               </div>
             </div>
           </body>
