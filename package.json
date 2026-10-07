@@ -13,7 +13,7 @@
     "allure:clean": "rm -rf allure-results allure-report"
   },
   "keywords": [],
-  "author": "Naveen Automation Labs",
+  "author": "24 Automation Labs",
   "license": "ISC",
   "type": "module",
   "devDependencies": {
