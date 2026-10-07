@@ -13,9 +13,9 @@ pipeline {
     agent any
 
     tools {
-        nodejs 'NodeJS-24'
-        maven 'Maven-3.9'
-        jdk 'JDK-17'
+        nodejs 'nodeJS24'
+        maven 'maven'
+        jdk 'jdk25'
         allure 'Allure'
     }
 
@@ -317,7 +317,7 @@ pipeline {
             steps {
                 input message: 'Deploy to PROD?',
                     ok: 'Yes, Deploy!',
-                    submitter: 'admin,naveen'
+                    submitter: 'admin,automate'
             }
         }
 
@@ -423,7 +423,7 @@ pipeline {
 
                 // Email Notification
                 emailext(
-                    to: 'naveenanimation20@gmail.com,training@naveenautomationlabs.com',
+                    to: 'arunqa1985@gmail.com',
                     subject: "🎭 CI/CD Pipeline — ${statusEmoji} ${buildStatus} — Build #${env.BUILD_NUMBER}",
                     mimeType: 'text/html',
                     body: """
