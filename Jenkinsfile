@@ -1,7 +1,7 @@
 // ═══════════════════════════════════════════════════════════════
 // Jenkinsfile — Master CI/CD Pipeline
 // Playwright TypeScript Framework
-// 24 Automation Labs
+// Naveen Automation Labs
 // ═══════════════════════════════════════════════════════════════
 // Reports per stage (3 reports × 4 envs = 12 total):
 //   1. PW HTML Report    → reports-{env}/html/
@@ -13,9 +13,9 @@ pipeline {
     agent any
 
     tools {
-        nodejs 'nodeJS24'
-        maven 'maven'
-        jdk 'jdk25'
+        nodejs 'NodeJS-24'
+        maven 'Maven-3.9'
+        jdk 'JDK-17'
         allure 'Allure'
     }
 
@@ -38,7 +38,7 @@ pipeline {
     }
 
     environment {
-        SLACK_CHANNEL = 'C0C71T8HAR3'
+        SLACK_CHANNEL = '#general'
     }
 
     options {
@@ -126,7 +126,7 @@ pipeline {
                             OAUTH_CLIENT_ID=$OAUTH_CLIENT_ID \
                             OAUTH_CLIENT_SECRET=$OAUTH_CLIENT_SECRET \
                             GRANT_TYPE=client_credentials \
-                            npx playwright test --project=chromium --grep "@smoke"
+                            npx playwright test --project=chromium --grep @smoke
                         '''
                     }
                 }
@@ -200,7 +200,7 @@ pipeline {
                             OAUTH_CLIENT_ID=$OAUTH_CLIENT_ID \
                             OAUTH_CLIENT_SECRET=$OAUTH_CLIENT_SECRET \
                             GRANT_TYPE=client_credentials \
-                            npx playwright test --project=chromium --grep "@regression"
+                            npx playwright test --project=chromium --grep @regression
                         '''
                     }
                 }
@@ -274,7 +274,7 @@ pipeline {
                             OAUTH_CLIENT_ID=$OAUTH_CLIENT_ID \
                             OAUTH_CLIENT_SECRET=$OAUTH_CLIENT_SECRET \
                             GRANT_TYPE=client_credentials \
-                            npx playwright test --project=chromium --grep "@smoke"
+                            npx playwright test --project=chromium --grep @smoke
                         '''
                     }
                 }
@@ -356,7 +356,7 @@ pipeline {
                             OAUTH_CLIENT_ID=$OAUTH_CLIENT_ID \
                             OAUTH_CLIENT_SECRET=$OAUTH_CLIENT_SECRET \
                             GRANT_TYPE=client_credentials \
-                            npx playwright test --project=chromium --grep "@smoke"
+                            npx playwright test --project=chromium --grep @smoke
                         '''
                     }
                 }
@@ -423,7 +423,7 @@ pipeline {
 
                 // Email Notification
                 emailext(
-                    to: 'arunqa1985@gmail.com',
+                    to: 'naveenanimation20@gmail.com,training@naveenautomationlabs.com',
                     subject: "🎭 CI/CD Pipeline — ${statusEmoji} ${buildStatus} — Build #${env.BUILD_NUMBER}",
                     mimeType: 'text/html',
                     body: """
