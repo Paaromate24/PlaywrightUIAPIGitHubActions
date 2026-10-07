@@ -83,7 +83,7 @@ pipeline {
                     git url: 'https://github.com/arunautomate24/OpenCartWebAPIAutomationFramework.git',
                         branch: 'main'
                     sh 'npm ci'
-                    sh 'npx playwright install --with-deps chromium'
+                    sh 'npm install @playwright/test@latest --save-dev'
                 }
             }
         }
