@@ -27,7 +27,7 @@ pipeline {
         )
         choice(
             name: 'BROWSER',
-            choices: ['chromium', 'firefox', 'webkit'],
+            choices: ['chrome', 'firefox', 'webkit'],
             description: 'Select browser'
         )
         choice(
@@ -126,7 +126,7 @@ pipeline {
                             OAUTH_CLIENT_ID=$OAUTH_CLIENT_ID \
                             OAUTH_CLIENT_SECRET=$OAUTH_CLIENT_SECRET \
                             GRANT_TYPE=client_credentials \
-                            npx playwright test --project=chromium --grep "@smoke"
+                            npx playwright test --project=chrome --grep "@smoke"
                         '''
                     }
                 }
@@ -200,7 +200,7 @@ pipeline {
                             OAUTH_CLIENT_ID=$OAUTH_CLIENT_ID \
                             OAUTH_CLIENT_SECRET=$OAUTH_CLIENT_SECRET \
                             GRANT_TYPE=client_credentials \
-                            npx playwright test --project=chromium --grep "@regression"
+                            npx playwright test --project=chrome --grep "@regression"
                         '''
                     }
                 }
@@ -274,7 +274,7 @@ pipeline {
                             OAUTH_CLIENT_ID=$OAUTH_CLIENT_ID \
                             OAUTH_CLIENT_SECRET=$OAUTH_CLIENT_SECRET \
                             GRANT_TYPE=client_credentials \
-                            npx playwright test --project=chromium --grep "@smoke"
+                            npx playwright test --project=chrome --grep "@smoke"
                         '''
                     }
                 }
@@ -356,7 +356,7 @@ pipeline {
                             OAUTH_CLIENT_ID=$OAUTH_CLIENT_ID \
                             OAUTH_CLIENT_SECRET=$OAUTH_CLIENT_SECRET \
                             GRANT_TYPE=client_credentials \
-                            npx playwright test --project=chromium --grep "@smoke"
+                            npx playwright test --project=chrome --grep "@smoke"
                         '''
                     }
                 }
